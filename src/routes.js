@@ -3,7 +3,8 @@ const {Router} = require('express');
 const routes = new Router();
 
 
-routes.get('/', (req, res)=>{
+routes.post('/', (req, res)=>{
+  console.log(req);
   return res.json({teste: 'teste'});
 });
 
