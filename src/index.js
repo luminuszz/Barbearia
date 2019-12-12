@@ -1,5 +1,5 @@
 const app = require('./app');
 
 
-app.listen(3000 || process.env);
+app.listen(process.env.PORT || 5000);
 
