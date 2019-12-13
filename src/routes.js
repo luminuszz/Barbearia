@@ -1,9 +1,18 @@
 const {Router} = require('express');
-
+const qs = require('querystring');
 const routes = new Router();
 
+const token = require('./online');
 
-routes.post('/new_user_identified.fcgi', (req, res)=>{
+
+routes.use((req, res, next)=>{
+  console.log(`Method:${req.method}; URL:${req.url}`);
+  return next();
+});
+
+routes.post(`/new_user_identified.fcgi&session=${token}`, (req, res)=>{
+  const decode = qs.decode(req.query);
+  console.log(decode);
   return res.json({
     'result':
   {'event': 7,
