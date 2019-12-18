@@ -15,7 +15,7 @@ routes.use((req, res, next)=>{
 
 routes.all('/**', (request, response) => {
   console.log('Path -> ' + request.path);
-  console.log('Query params -> ' + JSON.stringify(request.query));
+  console.log('Query params -> ' + JSON.stringify(request.query, request.request_id));
   console.log('Content type -> ' + request.get('content-type'));
   console.log('Body length -> ' + request.get('content-length'));
   return response.json({
