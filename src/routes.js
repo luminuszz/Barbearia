@@ -21,7 +21,7 @@ const session  =  axios({
             });
 
 
-routes.post(`/new_user_identified.fcgi?session=${session}`, (req, res)=>{
+routes.post(`/`, (req, res)=>{
   const decode = qs.decode(req.query);
   console.log(decode);
   return res.json({
