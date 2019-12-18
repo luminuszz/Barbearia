@@ -8,7 +8,7 @@ const token = require('./online');
 
 routes.use((req, res, next)=>{
   console.log(`Method:${req.method}; URL:${req.url} body:${req.body} ` );
-  console.log(req)
+  console.log(req.query)
   return next();
 });
 
