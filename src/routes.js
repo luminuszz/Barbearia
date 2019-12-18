@@ -28,8 +28,7 @@ routes.all('/**', (request, response) => {
       'actions': [
         {'action': 'door',
           'parameters': 'door=1'},
-        {'action': 'door',
-          'parameters': 'door=2'},
+
       ],
     },
   });
