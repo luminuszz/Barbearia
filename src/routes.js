@@ -6,14 +6,14 @@ const token = require('./online');
 
 
 routes.use((req, res, next)=>{
-  console.log(`Method:${req.method}; URL:${req.url}`);
+  console.log(`Method:${req.method}; URL:${req.url} body:${req.body} ` );
   return next();
 });
 
-routes.post(`/new_user_identified.fcgi&session=${token}`, (req, res)=>{
+routes.post(`/new_user_identified.fcgi?session=${token}`, (req, res)=>{
   const decode = qs.decode(req.query);
   console.log(decode);
-  return res.json({
+  return res.json({dy
     'result':
   {'event': 7,
     'user_id': 6,
