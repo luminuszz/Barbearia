@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
+const bodyParser = require('bodyParser');
 
 
 class App {
@@ -14,8 +15,8 @@ class App {
     this.express.use(express.json());
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({
-    extended: true
-}));
+      extended: true,
+    }));
   }
 
 
