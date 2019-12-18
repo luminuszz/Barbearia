@@ -13,7 +13,7 @@ routes.use((req, res, next)=>{
 routes.post(`/new_user_identified.fcgi?session=${token}`, (req, res)=>{
   const decode = qs.decode(req.query);
   console.log(decode);
-  return res.json({dy
+  return res.json({
     'result':
   {'event': 7,
     'user_id': 6,
