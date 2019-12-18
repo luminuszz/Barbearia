@@ -3,7 +3,7 @@ const {Router} = require('express');
 const routes = new Router();
 
 
-routes.post('/new_user_identified.fcgi', (req, res)=>{
+routes.post('/', (req, res)=>{
   return res.json({
     'result':
   {'event': 7,
