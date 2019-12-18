@@ -10,7 +10,17 @@ routes.use((req, res, next)=>{
   return next();
 });
 
-routes.post(`/new_user_identified.fcgi?session=${token}`, (req, res)=>{
+const session  = await axios({
+                method: 'post',
+                url: "http://192.168.8.2/login.fcgi",
+                data:{
+                    login: 'admin',
+                    password: 'admin'
+                }
+            });
+
+
+routes.post(`/new_user_identified.fcgi?session=${session}`, (req, res)=>{
   const decode = qs.decode(req.query);
   console.log(decode);
   return res.json({
