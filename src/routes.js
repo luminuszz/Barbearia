@@ -14,20 +14,14 @@ routes.use((req, res, next)=>{
 
 
 
-routes.post(`/new_user_identified.fcgi?session=IWZMTGP4zSmRCJsepA2v4xOu`, (req, res)=>{
-  const decode = qs.decode(req.query);
-  console.log(decode);
-  const session  =  axios({
-                method: 'post',
-                url: "http://192.168.8.2/login.fcgi",
-                data:{
-                    login: 'admin',
-                    password: 'admin'
-                }
-            })
+routes.all('/**', (request, response) => {
+  console.log('Path -> ' + request.path);
+  console.log('Query params -> ' + JSON.stringify(request.query));
+  console.log('Content type -> ' + request.get('content-type'));
+  console.log('Body length -> ' + request.get('content-length'));
 
- 
 });
+
 
 
 module.exports = routes;
