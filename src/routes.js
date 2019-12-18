@@ -10,7 +10,7 @@ routes.use((req, res, next)=>{
   return next();
 });
 
-const session  = await axios({
+const session  =  axios({
                 method: 'post',
                 url: "http://192.168.8.2/login.fcgi",
                 data:{
